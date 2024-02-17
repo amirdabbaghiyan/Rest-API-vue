@@ -10,7 +10,7 @@ let load = ref(false);
 
 document.onreadystatechange = ()=>{
     if (document.readyState == "complete") {
-      load.value = false;
+      load.value = true;
     }
 };
 </script>
