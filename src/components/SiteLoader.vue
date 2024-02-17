@@ -10,7 +10,7 @@ let load = ref(false);
 
 document.onreadystatechange = ()=>{
     if (document.readyState == "complete") {
-      load.value = true;
+      load.value = false;
     }
 };
 </script>
@@ -22,25 +22,32 @@ document.onreadystatechange = ()=>{
   }
 }
 .site-loader {
-    background-color: var(--primary-color);
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition-duration: 1s;
+  background-color: var(--primary-color);
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 1s;
 }
 .hide-loader {
-    visibility: hidden;
-    opacity: 0;
+  visibility: hidden;
+  opacity: 0;
 }
 .loader {
-    width: 40px;
-    height: 40px;
-    border: 2px solid var(--secondary-color);
-    border-top: 2px solid transparent;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+  padding: 35px;
+  border: 6px solid var(--bg-color);
+  border-top-color: var(--secondary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .loader {
+    padding: 25px;
+    border-width: 4px;
+  }
 }
 </style>
