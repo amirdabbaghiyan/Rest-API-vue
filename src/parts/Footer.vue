@@ -64,11 +64,11 @@ import ScrollUp from '../components/ScrollUp.vue';
   visibility: visible;
 }
 
-  /* Responsive */
-  @media (max-width:600px) {
-    .container {
-      flex-direction: column;
-      row-gap: 10px;
-    }
+/* Responsive */
+@media (max-width:600px) {
+  .container {
+    flex-direction: column;
+    row-gap: 10px;
   }
+}
 </style>

@@ -6,25 +6,45 @@
   </Hero>
 
   <FormData @update="editCard">
-    <template v-slot:formFiles>
-      <div class="form-filed">
-        <label for="name">name:</label>
-        <input id="name" type="text" v-model="user.name" required>
+    <template v-slot:formGroups>
+      <div class="form-group">
+        <label for="name" class="form-label">name:</label>
+        <input
+        type="text"
+        id="name"
+        class="form-control"
+        v-model="user.name"
+        required>
       </div>
 
-      <div class="form-filed">
-        <label for="email">email:</label>
-        <input id="email" type="email" v-model="user.email" required>
+      <div class="form-group">
+        <label for="email" class="form-label">email:</label>
+        <input
+        type="email"
+        id="email"
+        class="form-control"
+        v-model="user.email"
+        required>
       </div>
       
-      <div class="form-filed">
-        <label for="phone">phone:</label>
-        <input id="phone" type="tel" v-model="user.phone" required>
+      <div class="form-group">
+        <label for="phone" class="form-label">phone:</label>
+        <input
+        type="tel"
+        id="phone"
+        class="form-control"
+        v-model="user.phone"
+        required>
       </div>
 
-      <div class="form-filed">
-        <label for="website">website:</label>
-        <input id="website" type="text" v-model="user.website" required>
+      <div class="form-group">
+        <label for="website" class="form-label">website:</label>
+        <input
+        type="text"
+        id="website"
+        class="form-control"
+        v-model="user.website"
+        required>
       </div>
     </template>
   </FormData>
@@ -51,7 +71,7 @@ const fetchAPI = async () => {
 
 fetchAPI();
 
-function editCard(){
+const editCard = () => {
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       confirmButton: "btn btn-success",
@@ -88,7 +108,7 @@ function editCard(){
   });
 }
 
-const sendCard = async()=>{
+const sendCard = async () => {
   await axios.put(`${urlUsers}/${user.value.id}`,{
     id: user.value.id,
     name: user.value.name

@@ -1,7 +1,7 @@
 <template>
-    <div class="site-loader" :class="{'hide-loader' : load}">
-        <div class="loader"></div>
-    </div>
+  <div class="site-loader" :class="{'hide-loader' : load}">
+    <div class="loader"></div>
+  </div>
 </template>
 
 <script setup>
@@ -9,9 +9,9 @@ import { ref } from 'vue';
 let load = ref(false);
 
 document.onreadystatechange = ()=>{
-    if (document.readyState == "complete") {
-      load.value = true;
-    }
+  if (document.readyState == "complete") {
+    load.value = true;
+  }
 };
 </script>
 

@@ -9,7 +9,7 @@
     --primary-color: #606c38;
     --secondary-color: #283618;
     --bg-color: #fefae0;
-    --bg-color-card: #9f9f9f91;
+    --bg-color-card: #28361831;
     --shadow-primary: 0px 6px 8px #00000060;
     --duration-time: 0.25s;
 }
@@ -73,6 +73,11 @@ p,
 li {
     font-size: 17px;
     line-height: 2;
+}
+input,
+textarea {
+    border: unset;
+    outline: unset;
 }
 button {
     background-color: transparent;
@@ -213,24 +218,11 @@ img::before {
     .title-lg {
         font-size: 52px;
     }
-    .title-md {
-        font-size: 24px;
-    }
 }
 
 @media (max-width:900px) {
     .grid-container {
         grid-template-columns: repeat(1,1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    /* title */
-    .title-lg {
-        font-size: 48px;
-    }
-    .title-md {
-        font-size: 24px;
     }
 }
 
@@ -243,6 +235,13 @@ img::before {
     /* container */
     .container {
         padding: 25px 15px;
+    }
+    /* title */
+    .title-lg {
+        font-size: 48px;
+    }
+    .title-md {
+        font-size: 24px;
     }
 }
 

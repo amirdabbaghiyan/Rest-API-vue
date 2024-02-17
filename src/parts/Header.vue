@@ -21,7 +21,6 @@
     column-gap: 5%;
     text-transform: capitalize;
 }
-
 .menu-item-link {
     min-width: 80px;
     min-height: 80px;
@@ -32,10 +31,8 @@
     justify-content: center;
     transition-duration: var(--duration-time);
 }
-
 .active {
     background-color: var(--secondary-color);
-    /* color: var(--primary-color); */
     box-shadow: var(--shadow-primary);
 }
 
@@ -51,7 +48,6 @@
         padding: 15px;
         column-gap: 2%;
     }
-    
     .menu-item-link {
         transform: scale(0.75);
     }

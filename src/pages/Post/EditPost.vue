@@ -1,20 +1,30 @@
 <template>
   <Hero title="edit post" icon="icon-post">
-      <template v-slot:icon>
-        <i class="icon-edit"></i>
-      </template>
+    <template v-slot:icon>
+      <i class="icon-edit"></i>
+    </template>
   </Hero>
 
-  <FormData @getData="setData($event)" @update="editCard">
-    <template v-slot:formFiles>
-      <div class="form-filed">
-        <label for="title">title:</label>
-        <input id="title" type="text" v-model="post.title" required>
+  <FormData @update="editCard">
+    <template v-slot:formGroups>
+      <div class="form-group">
+        <label for="title" class="form-label">title:</label>
+        <input
+        type="text"
+        id="title"
+        class="form-control"
+        v-model="post.title"
+        required>
       </div>
 
-      <div class="form-filed">
-        <label for="body">body:</label>
-        <textarea rows="6" id="body" v-model="post.body" required></textarea>
+      <div class="form-group">
+        <label for="body" class="form-label">body:</label>
+        <textarea
+        rows="6"
+        id="body"
+        class="form-control"
+        v-model="post.body"
+        required></textarea>
       </div>
     </template>
   </FormData>
@@ -41,7 +51,7 @@ const fetchAPI = async () => {
 
 fetchAPI();
 
-function editCard(){
+const editCard = () => {
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       confirmButton: "btn btn-success",
@@ -78,7 +88,7 @@ function editCard(){
   });
 }
 
-const sendCard = async()=>{
+const sendCard = async () => {
   await axios.put(`${urlPosts}/${post.value.id}`,{
     id: post.value.id,
     name: post.value.name

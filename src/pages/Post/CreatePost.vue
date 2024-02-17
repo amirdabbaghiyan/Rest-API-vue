@@ -1,26 +1,35 @@
 <template>
   <Hero title="create post" icon="icon-create-post"/>
 
-  <div class="container container-sm">
-    <form class="card" @submit.prevent="Card">
-      <div class="form-filed">
-        <label for="title">title:</label>
-        <input id="title" type="text" v-model="post.title" required>
+  <FormData @update="createCard">
+    <template v-slot:formGroups>
+      <div class="form-group">
+        <label for="title" class="form-label">title:</label>
+        <input
+        type="text"
+        id="title"
+        class="form-control"
+        v-model="post.title"
+        required>
       </div>
 
-      <div class="form-filed">
-        <label for="body">body:</label>
-        <textarea rows="6" id="body" v-model="post.body" required></textarea>
+      <div class="form-group">
+        <label for="body" class="form-label">body:</label>
+        <textarea
+        rows="6"
+        id="body"
+        class="form-control"
+        v-model="post.body"
+        required></textarea>
       </div>
-      
-      <input type="submit" class="btn btn-primary">
-    </form>
-  </div>
+    </template>
+  </FormData>
 </template>
 
 <script setup>
 // components
 import Hero from '@/parts/Hero.vue';
+import FormData from '@/components/FormData.vue';
 
 import axios from 'axios';
 import { reactive } from 'vue';
@@ -33,20 +42,18 @@ const post = reactive({
 });
 
 const postAPI = async () => {
-  const response = await axios.post(urlPosts,{
+  await axios.post(urlPosts,{
     title: post.title ,
     body: post.body
   });
-
-  console.log(response);
 };
 
-function clearForm() {
+const clearForm = () => {
   post.title = '';
   post.body = '';
 }
 
-function Card(){
+const createCard = () => {
   if (post.title !== '' && post.body  !== '') {
     clearForm();
 

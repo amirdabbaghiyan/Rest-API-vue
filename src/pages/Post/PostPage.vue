@@ -45,7 +45,7 @@ const fetchAPI = async () => {
 
 fetchAPI();
 
-function clear(){
+const clear = () => {
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       confirmButton: "btn btn-success",

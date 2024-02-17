@@ -1,18 +1,14 @@
 <template>
-  <a href='#' class="scroll-up btn-secondary icon-up" :class="[show ? '' : 'hide']"></a>
+  <a href='#' class="scroll-up btn-secondary icon-up" :class="{'hide' : hide}"></a>
 </template>
 
 <script setup>
 import { ref } from "vue";
 
-let show = ref(false);
+let hide = ref(true);
 
-window.addEventListener('scroll',()=>{
-  if (window.scrollY > 500){
-    show.value = true;
-  } else {
-    show.value = false;
-  }
+window.addEventListener('scroll', () => {
+  window.scrollY > 500 ? hide.value = false : hide.value = true;
 });
 </script>
 
@@ -28,7 +24,6 @@ window.addEventListener('scroll',()=>{
   font-size: 32px;
   color: #fff;
   transition-duration: var(--duration-time);
-  backdrop-filter: blur(20px) saturate(1.7);
 }
 .hide {
   opacity: 0;

@@ -16,7 +16,7 @@
 <script setup>
 import { defineProps } from 'vue';
 
-const props = defineProps(['title','icon']);
+const props = defineProps(['icon', 'title']);
 </script>
 
 <style>

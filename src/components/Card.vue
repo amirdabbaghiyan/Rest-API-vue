@@ -1,8 +1,8 @@
 <template>
     <section class="card">
-        <span class="card-id">{{props.cardId}}</span>
-        
         <h3 class="card-title title-md">{{cardTitle}}</h3>
+        
+        <div class="card-id">{{props.cardId}}</div>
         
         <slot name="cardBody"></slot>
 
@@ -17,7 +17,7 @@
 <script setup>
 import { defineProps } from 'vue';
 
-const props = defineProps(['pageTarget', 'cardId', 'cardTitle', 'btnText']);
+const props = defineProps(['pageTarget', 'cardTitle', 'cardId', 'btnText']);
 </script>
 
 <style>
@@ -25,10 +25,8 @@ const props = defineProps(['pageTarget', 'cardId', 'cardTitle', 'btnText']);
     width: 100%;
     padding: 30px;
     background-color: var(--bg-color-card);
-    backdrop-filter: blur(80px) saturate(1.4);
     border-radius: 20px;
     text-align: left;
-    font-size: 17px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -51,23 +49,21 @@ const props = defineProps(['pageTarget', 'cardId', 'cardTitle', 'btnText']);
 .card-title {
     padding-right: 40px;
 }
-.card-body {
-    margin-bottom: 20px;
-}
 .card-list {
-    padding: 10px 6%;
+    padding: 0 6%;
 }
 .card-list-item {
-    padding: 10px 0;
+    padding: 7px 0;
     display: flex;
     justify-content: space-between;
     column-gap: 5px;
 }
 .card-btn {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    column-gap: 20px;
 }
 .card-btn .btn {
     width: 100%;

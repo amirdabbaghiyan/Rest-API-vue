@@ -62,7 +62,7 @@ const fetchAPI = async () => {
 
 fetchAPI();
 
-function clear(){
+const clear = () => {
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       confirmButton: "btn btn-success",
@@ -99,7 +99,7 @@ function clear(){
   });
 }
 
-const deleteUser= async() => {
+const deleteUser= async () => {
   await axios.delete(`${urlUsers}/${user.value.id}`);
 }
 </script>
