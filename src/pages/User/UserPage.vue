@@ -51,8 +51,12 @@ import { urlUsers } from '@/server/api.js';
 import Swal from 'sweetalert2';
 
 const user = ref({});
-const route = useRoute();
 const loading = ref(true);
+const route = useRoute();
+
+// hooks
+import useTabTitle from '@/hooks/UseTabTitle';
+useTabTitle(`User ${route.params.id}`);
 
 const fetchAPI = async () => {
   const response = await axios.get(`${urlUsers}/${route.params.id}`);

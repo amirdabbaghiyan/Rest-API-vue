@@ -44,6 +44,10 @@ import Swal from 'sweetalert2';
 const post = ref({});
 const route = useRoute();
 
+// hooks
+import useTabTitle from '@/hooks/UseTabTitle';
+useTabTitle(`Edit Post ${route.params.id}`);
+
 const fetchAPI = async () => {
   const response = await axios.get(`${urlPosts}/${route.params.id}`);
   post.value = response.data;

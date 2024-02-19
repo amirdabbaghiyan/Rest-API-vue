@@ -35,6 +35,10 @@ import { ref } from 'vue';
 const posts = ref();
 const loading = ref(true);
 
+// hooks
+import useTabTitle from '@/hooks/UseTabTitle';
+useTabTitle('Posts');
+
 const fetchAPI = async () => {
   const response = await axios.get(urlPosts);
   posts.value = response.data;

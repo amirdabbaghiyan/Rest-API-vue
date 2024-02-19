@@ -36,6 +36,10 @@ import { reactive } from 'vue';
 import { urlPosts } from '@/server/api.js';
 import Swal from 'sweetalert2';
 
+// hooks
+import useTabTitle from '@/hooks/UseTabTitle';
+useTabTitle('Create Post');
+
 const post = reactive({
   title: '',
   body: ''

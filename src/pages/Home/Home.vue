@@ -8,6 +8,11 @@
   </div>
 </template>
 
+<script setup>
+import useTabTitle from '@/hooks/UseTabTitle';
+useTabTitle('Home');
+</script>
+
 <style>
 .hero img {
   object-fit: contain;

@@ -64,6 +64,10 @@ import Swal from 'sweetalert2';
 const user = ref({});
 const route = useRoute();
 
+// hooks
+import useTabTitle from '@/hooks/UseTabTitle';
+useTabTitle(`Edit User ${route.params.id}`);
+
 const fetchAPI = async () => {
   const response = await axios.get(`${urlUsers}/${route.params.id}`);
   user.value = response.data;

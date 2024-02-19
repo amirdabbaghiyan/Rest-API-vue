@@ -1,6 +1,6 @@
 <template>
   <Hero title="post" icon="icon-post"/>
-  
+
   <Loading v-if="loading"/>
 
   <div class="container container-sm">
@@ -36,6 +36,10 @@ import Swal from 'sweetalert2';
 const post = ref({});
 const route = useRoute();
 const loading = ref(true);
+
+// hooks
+import useTabTitle from '@/hooks/UseTabTitle';
+useTabTitle(`Post ${route.params.id}`);
 
 const fetchAPI = async () => {
   const response = await axios.get(`${urlPosts}/${route.params.id}`);

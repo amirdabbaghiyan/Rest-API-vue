@@ -48,6 +48,10 @@ import { urlUsers } from '@/server/api.js';
 const users = ref();
 const loading = ref(true);
 
+// hooks
+import useTabTitle from '@/hooks/UseTabTitle';
+useTabTitle('Users');
+
 const fetchAPI = async () => {
   const response = await axios.get(urlUsers);
   users.value = response.data;
